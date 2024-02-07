@@ -31,7 +31,7 @@ pipeline {
                 script{
                     docker.withRegistry('', 'DockerHub') {
                     sh 'docker tag calculator 48483/calculator:latest'
-                    sh 'docker push 48483/calculator'
+                    sh 'docker push 48483/calculator:latest'
                     }
                  }
             }
