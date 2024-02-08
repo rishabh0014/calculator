@@ -1,4 +1,4 @@
-package org.sp.miniProject;
+package org.example;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
