@@ -18,8 +18,9 @@ pipeline {
         }
       stage('Docker Build to Image') {
              steps {
-                  sh 'docker build -t rishabh0014/calculator:latest .'
+                  sh 'docker build -t calculator:latest .'
             }
+//             rishabh0014/
         }
       stage('Push Docker Image to Docker Hub') {
               steps {
