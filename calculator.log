@@ -8,3 +8,11 @@
 2024-02-08 18:19:58.591 [main] INFO  org.example.Calculator - [RESULT - NATURAL LOG] - 2.302585092994046
 2024-02-08 18:20:16.528 [main] INFO  org.example.Calculator - [POWER - 2.7 RAISED TO] 2.0
 2024-02-08 18:20:16.528 [main] INFO  org.example.Calculator - [RESULT - POWER] - 7.290000000000001
+2024-02-08 18:51:03.716 [main] INFO  org.example.Calculator - [FACTORIAL] - 5.0
+2024-02-08 18:51:03.719 [main] INFO  org.example.Calculator - [RESULT - FACTORIAL] - 120.0
+2024-02-08 18:51:09.829 [main] INFO  org.example.Calculator - [SQ ROOT] - 36.0
+2024-02-08 18:51:09.829 [main] INFO  org.example.Calculator - [RESULT - SQ ROOT] - 6.0
+2024-02-08 18:51:16.423 [main] INFO  org.example.Calculator - [POWER - 4.0 RAISED TO] 4.0
+2024-02-08 18:51:16.424 [main] INFO  org.example.Calculator - [RESULT - POWER] - 256.0
+2024-02-08 18:51:23.109 [main] INFO  org.example.Calculator - [NATURAL LOG] - 554.0
+2024-02-08 18:51:23.109 [main] INFO  org.example.Calculator - [RESULT - NATURAL LOG] - 6.317164686747284
