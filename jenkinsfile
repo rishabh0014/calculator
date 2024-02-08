@@ -1,52 +1,97 @@
+// pipeline {
+//     agent any
+//
+//     environment {
+//         DOCKER_IMAGE_NAME = 'calculator'
+//         GITHUB_REPO_URL = 'https://github.com/rishabh0014/calculator'
+//     }
+//
+//     stages {
+//         stage('Checkout') {
+//             steps {
+//                 script {
+//                     // Checkout the code from the GitHub repository
+//                     git branch: 'main', url: "${GITHUB_REPO_URL}"
+//                 }
+//             }
+//         }
+//
+//         stage('Build Docker Image') {
+//             steps {
+//                 script {
+//                     // Build Docker image
+//                     docker.build("${DOCKER_IMAGE_NAME}", '.')
+//                     // sh 'sudo docker build -t cala'
+//                 }
+//             }
+//         }
+//
+//         stage('Push Docker Images') {
+//             steps {
+//                 script{
+//                     docker.withRegistry('', 'DockerHub') {
+//                     sh 'docker tag calculator 48483/calculator:latest'
+//                     sh 'docker push 48483/calculator:latest'
+//                     }
+//                  }
+//             }
+//         }
+//
+//    stage('Run Ansible Playbook') {
+//             steps {
+//                 script {
+//                     ansiblePlaybook(
+//                         playbook: 'deploy.yml',
+//                         inventory: 'inventory'
+//                      )
+//                 }
+//             }
+//         }
+//
+//     }
+// }
+
+
 pipeline {
     agent any
-
-    environment {
-        DOCKER_IMAGE_NAME = 'calculator'
-        GITHUB_REPO_URL = 'https://github.com/rishabh0014/calculator'
-    }
-
     stages {
-        stage('Checkout') {
+        stage('Git Pull') {
             steps {
-                script {
-                    // Checkout the code from the GitHub repository
-                    git branch: 'main', url: "${GITHUB_REPO_URL}"
-                }
+                git url: 'https://github.com/rishabh0014/calculator.git' , branch: 'main'
             }
         }
-
-        stage('Build Docker Image') {
+      stage('Maven Build') {
             steps {
-                script {
-                    // Build Docker image
-                    docker.build("${DOCKER_IMAGE_NAME}", '.')
-                    // sh 'sudo docker build -t cala'
-                }
+                sh 'mvn clean install'
             }
         }
-
-        stage('Push Docker Images') {
-            steps {
-                script{
-                    docker.withRegistry('', 'DockerHub') {
-                    sh 'docker tag calculator 48483/calculator:latest'
-                    sh 'docker push 48483/calculator:latest'
+      stage('Testing project') {
+             steps {
+                sh "mvn test"
+             }
+        }
+      stage('Docker Build to Image') {
+             steps {
+                  sh 'docker build -t rishabh0014/calculator:latest .'
+            }
+        }
+      stage('Push Docker Image to Docker Hub') {
+              steps {
+                        withDockerRegistry([ credentialsId: "DockerHub", url: "" ]){
+                        sh 'docker push rishabh0014/calculator:latest'
                     }
-                 }
-            }
-        }
-
-   stage('Run Ansible Playbook') {
-            steps {
-                script {
-                    ansiblePlaybook(
-                        playbook: 'deploy.yml',
-                        inventory: 'inventory'
-                     )
-                }
-            }
-        }
-
+              }
+      }
+      stage('Ansible Pull Docker Image') {
+                  steps {
+                      ansiblePlaybook becomeUser: null,
+                      colorized: true,
+                      disableHostKeyChecking: true,
+                      installation: 'Ansible',
+                      inventory: 'inventory',
+                      playbook: 'deploy.yml',
+                      sudoUser: null
+                  }
+      }
     }
 }
