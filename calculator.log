@@ -1,7 +1,3 @@
-2024-02-08 15:31:49.947 [main] INFO  org.example.Calculator - [Addition] - 546.0 + 4331.0
-2024-02-08 15:31:49.949 [main] INFO  org.example.Calculator - [Result Addition] - 4877.0
-2024-02-08 15:32:01.634 [main] INFO  org.example.Calculator - [Multiplication] - 655.0 * 345.0
-2024-02-08 15:32:01.634 [main] INFO  org.example.Calculator - [Result Multiplication] - 225975.0
 2024-02-08 18:19:33.065 [main] INFO  org.sp.miniProject.Calculator - [FACTORIAL] - 3.0
 2024-02-08 18:19:33.067 [main] INFO  org.sp.miniProject.Calculator - [RESULT - FACTORIAL] - 6.0
 2024-02-08 18:19:44.316 [main] INFO  org.sp.miniProject.Calculator - [FACTORIAL] - 5.0
