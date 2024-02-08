@@ -2,3 +2,13 @@
 2024-02-08 15:31:49.949 [main] INFO  org.example.Calculator - [Result Addition] - 4877.0
 2024-02-08 15:32:01.634 [main] INFO  org.example.Calculator - [Multiplication] - 655.0 * 345.0
 2024-02-08 15:32:01.634 [main] INFO  org.example.Calculator - [Result Multiplication] - 225975.0
+2024-02-08 18:19:33.065 [main] INFO  org.sp.miniProject.Calculator - [FACTORIAL] - 3.0
+2024-02-08 18:19:33.067 [main] INFO  org.sp.miniProject.Calculator - [RESULT - FACTORIAL] - 6.0
+2024-02-08 18:19:44.316 [main] INFO  org.sp.miniProject.Calculator - [FACTORIAL] - 5.0
+2024-02-08 18:19:44.316 [main] INFO  org.sp.miniProject.Calculator - [RESULT - FACTORIAL] - 120.0
+2024-02-08 18:19:50.133 [main] INFO  org.sp.miniProject.Calculator - [NATURAL LOG] - 1024.0
+2024-02-08 18:19:50.133 [main] INFO  org.sp.miniProject.Calculator - [RESULT - NATURAL LOG] - 6.931471805599453
+2024-02-08 18:19:58.591 [main] INFO  org.sp.miniProject.Calculator - [NATURAL LOG] - 10.0
+2024-02-08 18:19:58.591 [main] INFO  org.sp.miniProject.Calculator - [RESULT - NATURAL LOG] - 2.302585092994046
+2024-02-08 18:20:16.528 [main] INFO  org.sp.miniProject.Calculator - [POWER - 2.7 RAISED TO] 2.0
+2024-02-08 18:20:16.528 [main] INFO  org.sp.miniProject.Calculator - [RESULT - POWER] - 7.290000000000001
