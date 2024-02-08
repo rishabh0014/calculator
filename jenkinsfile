@@ -78,7 +78,7 @@ pipeline {
       stage('Push Docker Image to Docker Hub') {
               steps {
                         withDockerRegistry([ credentialsId: "DockerHub", url: "" ]){
-                        sh 'docker push rishabh0014/calculator:latest'
+                        sh 'docker push 48483/calculator:latest'
                     }
               }
       }
