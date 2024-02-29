@@ -71,6 +71,8 @@ public class Calculator {
     }
 
 
+
+
     public double factorial(double number1) {
         logger.info("[FACTORIAL] - " + number1);
         double result = fact(number1);
